@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS members;
+CREATE TABLE members (
+    memberId BIGINT NOT NULL AUTO_INCREMENT,
+    id VARCHAR(30) NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    createdAt DATETIME NOT NULL DEFAULT NOW(),
+    PRIMARY KEY (memberId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE INDEX member_index_id ON members(id);

@@ -15,6 +15,7 @@ buildscript {
 		classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
 		classpath("org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion")
 		classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
+		classpath("org.flywaydb:flyway-mysql:9.16.3")
 	}
 }
 
@@ -42,4 +43,8 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs += "-Xjsr305=strict"
 		jvmTarget = "17"
 	}
+}
+
+tasks.withType<Test> {
+	useJUnitPlatform()
 }
